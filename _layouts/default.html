@@ -38,12 +38,10 @@
         </ul>
         {% endif %}
         {% for item in site.html_pages %}
-          {% if item.path != "index.md" %}
-            {% if item.title %}
-              <li>
-                <a href="{{ item.path | replace:'.md','.html' }}">{{ item.title}}</a>
-              </li>
-            {% endif %}
+          {% if item.path != "index.md" and item.title %}
+            <li>
+              <a href="{{ item.path | replace:'.md','.html' }}">{{ item.title }}</a>
+            </li>
           {% endif %}
         {% endfor %}
       </header>
